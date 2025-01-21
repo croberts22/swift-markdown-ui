@@ -24,7 +24,7 @@ extension Array where Element == BlockNode {
 
   func renderHTML() -> String {
     UnsafeNode.makeDocument(self) { document in
-      String(cString: cmark_render_html(document, CMARK_OPT_DEFAULT, nil))
+      String(cString: cmark_render_html(document, CMARK_OPT_UNSAFE, nil))
     } ?? ""
   }
 }
